@@ -1,0 +1,23 @@
+.ref-title{
+	color: red;
+}
+
+
+.ref-desc{
+	color: red;
+}
+
+.ref-type{
+	color: blue;
+}
+
+
+.ref-usage{
+	color: blue;
+}
+
+
+#ref-title-container{
+	display: flex;
+	flex-direction: row;
+}
