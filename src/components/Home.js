@@ -12,11 +12,16 @@ function Home(){
 		<h1>The PeerRTC</h1>
 		<p class="home-desc">{mainDescription}</p>
 		<br/>
+
 		<center>	
-			{createGithubButtons("Fork PeerRTC", "https://github.com/PeerRTC/PeerRTC")}
-			{createGithubButtons("Fork AndroidPeerRTC", "https://github.com/PeerRTC/AndroidPeerRTC")}
-			{createGithubButtons("Fork PeerRTCServer", "https://github.com/PeerRTC/PeerRTC-Server")}
+			<p id="fork-label">Fork the source codes</p>
+		</center>	
+		<center>	
+			{createGithubButtons("PeerRTC", "https://github.com/PeerRTC/PeerRTC")}
+			{createGithubButtons("AndroidPeerRTC", "https://github.com/PeerRTC/AndroidPeerRTC")}
+			{createGithubButtons("PeerRTCServer", "https://github.com/PeerRTC/PeerRTC-Server")}
 		</center>
+
 
 		<br/><br/><br/>
 		<div class="home-desc">This project is still on beta phase and can be unstable. Contributions and bug reports are all welcome.</div>

@@ -1,6 +1,13 @@
 .fork-button{
 	background-color: black;
 	margin-left: 15px;
+	margin-bottom: 15px;
+	font-size: 15px;
+}
+
+#fork-label{
+	font-weight: bold;
+	margin-bottom: 20px;
 }
 
 .fork-button:hover{
