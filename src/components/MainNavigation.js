@@ -1,11 +1,17 @@
+import logo from "../assets/logo.png"
+
 function MainNavigation(props){
-	return <nav id="main-navigation">
-		{createLinks("Home", ()=>props.setDisplayPage(0))}
-		{createLinks("Samples", ()=>props.setDisplayPage(1))}
-		{createLinks("Web", ()=>props.setDisplayPage(2))}
-		{createLinks("Android",  ()=>props.setDisplayPage(3))}
-		{createLinks("Server",  ()=>props.setDisplayPage(4))}
-	</nav>
+	return <div id="main-navigation-container">
+		<img id="logo-img"src={logo}></img>
+
+		<nav id="nav">
+			{createLinks("Getting Started", ()=>props.setDisplayPage(0))}
+			{createLinks("Sample Projects", ()=>props.setDisplayPage(1))}
+			{createLinks("Web PeerRTC", ()=>props.setDisplayPage(2))}
+			{createLinks("Android PeerRTC",  ()=>props.setDisplayPage(3))}
+			{createLinks("Cloud Server",  ()=>props.setDisplayPage(4))}
+		</nav>
+	</div>
 }
 
 
