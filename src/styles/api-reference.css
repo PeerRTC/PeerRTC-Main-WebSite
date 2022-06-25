@@ -1,11 +1,11 @@
 .ref-title, .ref-title-params{
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
 
 .ref-title-params{
-	font-size: 20px;
+	font-size: 18px;
 }
 
 
@@ -16,7 +16,7 @@
 }
 
 .ref-desc-params{
-	font-size: 19px;
+	font-size: 18px;
 }
 
 .ref-type, .ref-default, .ref-type-in-desc{
@@ -57,3 +57,27 @@
 	margin-top: 20px;
 	margin-left: 25px;
 }
+
+.code-container{
+	background-color: #f9f9f8;	
+	border-color: #efeeef;
+	border-width: 2px;
+	border-style: solid;
+	padding: 10px;
+}
+
+#main-h1-desc{
+	margin-left: 20px;
+	line-height: 30px;
+}
+
+#setup-h1-desc{
+	margin-left: 20px;
+	line-height: 30px;
+}
+
+#api-ref-container{
+	margin-left: 20px;
+}
+
+

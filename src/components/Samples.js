@@ -14,7 +14,7 @@ function Samples(){
 	const desc3 = "Simple video calling and file sharing android app source code."
 
 	return <div>
-		<h1>Sample Projects</h1>
+		<h1>📖 Sample Projects</h1>
 
 		<p id="sample-project-desc">To help the developers in implementing the library, we have created simple projects as an example.</p>
 		
@@ -26,7 +26,7 @@ function Samples(){
 		<hr/>
 		<br/>
 
-		<h1>Sample Usage</h1>
+		<h1>🧐 Sample Usage</h1>
 		<h2 class="sample-usage-title">Web</h2>
 		<p class="sample-usage-desc">Sample javascript code for connecting in PeerRTC server.</p>
 		<div class="sample-usage-codes-container">{webUsage}</div>
@@ -52,7 +52,7 @@ function fetchSampleUsage(raw, setStateFunc){
 
 function createSampleProjectLinks(name, link, desc){
 	return <div>
-		 <h2 class="sample-project-link"><a href={link} target="_blank">{name}</a></h2>
+		 <h2 class="sample-project-link"><a href={link}>{name}</a></h2>
 		 <div class="sample-project-desc">{desc}</div>
 	</div>
 }

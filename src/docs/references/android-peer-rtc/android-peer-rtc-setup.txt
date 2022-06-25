@@ -1,0 +1,20 @@
+1. If you will be using the default PeerRTC backend server provided by us for testing purposes, you can skip this step. For own
+managed backend server, refer to [PeerRTC server's](https://github.com/PeerRTC/PeerRTC-Server) repository. Server owned by us is unstable and not managed so it is
+recommended to host your own. <br/><br/>
+
+2. Add the following in your root [build.gradle](https://github.com/PeerRTC/AndroidPeerRTC/blob/master/build.gradle) file. <br/>
+```
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+3. Add in [build.gradle](https://github.com/PeerRTC/AndroidPeerRTC/blob/master/app/build.gradle) (app level) file. <br/>
+```
+dependencies {
+ implementation 'com.github.PeerRTC:AndroidPeerRTC:v.1.0.1-beta'
+}
+```

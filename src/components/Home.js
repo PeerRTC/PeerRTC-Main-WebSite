@@ -10,7 +10,7 @@ function Home(){
 	fetch(raw).then(r=>r.text()).then(text=>setMainDescription(text))
 	return <div id="main-home-container">
 		<h1>The PeerRTC</h1>
-		<p class="home-description">{mainDescription}</p>
+		<p class="home-desc">{mainDescription}</p>
 		<br/>
 		<center>	
 			{createGithubButtons("Fork PeerRTC", "https://github.com/PeerRTC/PeerRTC")}
@@ -18,13 +18,13 @@ function Home(){
 			{createGithubButtons("Fork PeerRTCServer", "https://github.com/PeerRTC/PeerRTC-Server")}
 		</center>
 
-		<br/><br/>
-		<div class="home-description">This project is still on beta phase and can be unstable. Contributions and bug reports are all welcome.</div>
+		<br/><br/><br/>
+		<div class="home-desc">This project is still on beta phase and can be unstable. Contributions and bug reports are all welcome.</div>
 
 		<br/>
 		<center>
 			<p id="home-attribution-req">
-				💡 Attribution to <a href={attribUrl} target="_blank">us</a> are required
+				💡 Attribution to <a href={attribUrl}>us</a> are required
 				 when using any modules and libraries from PeerRTC 💡
 			</p>
 

@@ -1,0 +1,12 @@
+1. Install [Node.js](https://nodejs.org/en/) first. Skip this step if already installed. <br/><br/>
+2. Clone this [repository](https://github.com/PeerRTC/PeerRTC-Server). <br/><br/>
+3. In command line, navigate to root directory of the newly downloaded repository. <br/><br/>
+4. Install all needed dependencies in the command line. <br/>
+```
+npm install
+```
+
+5. Start the server. <br/>
+```
+npm start
+```
