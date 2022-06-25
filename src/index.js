@@ -4,7 +4,6 @@ import "./styles/main.css"
 import "./styles/home.css"
 import "./styles/main-navigation.css"
 import "./styles/samples.css"
-import "./styles/varela-round.css"
 import Main from './components/Main.js'
 
 
