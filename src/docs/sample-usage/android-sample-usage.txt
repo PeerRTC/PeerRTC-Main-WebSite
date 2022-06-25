@@ -1,0 +1,10 @@
+val onReady = {p:AndroidPeerRTC->
+  p.start(isSecure=true)
+}
+
+val peer = AndroidPeerRTC(context = this, serverURL = null, configuration = null, onReady=onReady) 
+
+peer.onStart = {p:AndroidPeerRTC-> 
+  println("Successfully connected to the server")
+  println("My Id " + p.id)
+}

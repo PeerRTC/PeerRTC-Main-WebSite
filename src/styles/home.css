@@ -1,0 +1,39 @@
+.fork-button{
+	background-color: black;
+	margin-left: 15px;
+}
+
+.fork-button:hover{
+	background-color: #6E6E6E;
+}
+
+
+#home-description{
+	margin-left: 15px;
+	line-height: 30px;
+}
+
+#home-attribution-req{
+	font-weight: bold;
+}
+
+#link-display{
+	background-color: #f9f9f8;
+	font-size: 15px;
+	font-weight: bold;
+	border-color: #efeeef;
+	border-width: 2px;
+	border-style: solid;
+	padding: 10px;
+}
+
+#copy-attrib-bttn{
+	margin-top: 15px;
+}
+
+#attrib-copied-indicator{
+	font-weight: bold;
+	margin-top: 15px;
+	font-size: 17px;
+	visibility: hidden;
+}

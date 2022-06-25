@@ -1,0 +1,14 @@
+ peer = new PeerRTC()
+
+  onConnect = p=>{
+    // Code after successful connection to the server goes here
+    myId = p.id 
+    console.log("Successfully connected to the server")
+    console.log("My Id: " + myId)
+  }
+
+  // true will only work if your server's url is SSL supported.
+  isSecure = true
+  
+  // connect to the server
+  peer.start(isSecure, onConnect)

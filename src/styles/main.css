@@ -1,4 +1,74 @@
+:root{
+	--default-text-color: #2b2b2b;
+	--default-font-family: 'Varela Round', Serif;
+}
+
 #main-container{
 	display: flex;
 	flex-direction: row;
 }
+
+
+.side-preview{
+	margin-top: 3%;
+	width: 50%;
+	margin-left: 40px;
+
+}
+
+
+
+p, div{
+	font-size: 18px;
+	color: var(--default-text-color);
+	font-family: var(--default-font-family);
+}
+
+
+
+h1{
+	font-size: 23px;
+	color: var(--default-text-color);
+	font-family: var(--default-font-family);
+}
+
+h2{
+	font-size: 20px;
+	color: var(--default-text-color);
+	font-family: var(--default-font-family);
+}
+
+li{
+	font-size: 20px;
+	margin: 2px;
+	font-family: var(--default-font-family);
+	color: var(--default-text-color);
+}
+
+button{
+	color: white;
+	background-color: #3d2952;
+	border-style: none;
+	font-size: 17px;
+	padding: 15px 25px;
+	font-family: var(--default-font-family);
+	border-radius: 10px;
+}
+
+button:hover{
+	background-color:  #583C70;
+}
+
+pre{
+	white-space: pre-wrap;
+}
+
+body{
+	margin-bottom: 100px;
+}
+
+
+a{
+	color: #3d2952;
+}
+

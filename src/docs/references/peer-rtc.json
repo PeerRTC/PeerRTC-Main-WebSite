@@ -1,0 +1,25 @@
+{
+	"references": [
+		{
+			"title": "id",
+			"type": "attribute",
+			"desc": "Returns a unique id assigned by the server to this client.",
+			"usage": "peer.id",
+			"params": [
+				{
+					"title": "Title",
+					"desc": "Description",
+					"usage": "peer.id"
+
+				},
+
+				{
+					"title": "Title",
+					"desc": "Description"
+				}
+			]
+		}
+
+
+	]
+}

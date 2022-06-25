@@ -1,5 +1,5 @@
 function MainNavigation(props){
-	return <nav>
+	return <nav id="main-navigation">
 		{createLinks("Home", ()=>props.setDisplayPage(0))}
 		{createLinks("Samples", ()=>props.setDisplayPage(1))}
 		{createLinks("Web", ()=>props.setDisplayPage(2))}
@@ -11,8 +11,9 @@ function MainNavigation(props){
 
 function createLinks(name, onClick){
 	return <>
-		<button onClick={()=>onClick()}>{name}</button>
+		<a class="nav-item" href="#" onClick={()=>onClick()}>{name}</a>
 		<br/>
+		<hr class="nav-line"/>
 	</>
 }
 

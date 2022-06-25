@@ -10,27 +10,70 @@ function buildReferenceView(references, isParameters) {
 			{
 				references.map(ref=>
 					<div>
-						{createTitle(ref)}
-						{createType(ref)}
+						<div id="ref-title-container"> 
+							{createTitle(ref, isParameters)} 
+							{createType(ref)}
+							{createDefault(ref)}
+						</div>
+					
 						{createUsage(ref)}
-						{createDescription(ref)}
-						{!isParameters && createParameters(ref)}
+						{createDescription(ref, isParameters)}
+						<div id="ref-params-container">
+							{!isParameters && createParameters(ref)}
+						</div>
 					</div>
-
 				) 
 			}
+
+			{isParameters && <br/>}
 		</>
 	)
 }
 
-function createTitle(ref){
-	return <div class="ref-title">{ref.title}</div>
+function createTitle(ref, isParameters){
+	var id = "ref-title"
+	if (isParameters) {id = "ref-title-params"}
+	return <div class={id}>{ref.title}</div>
 }
 
-function createDescription(ref){
+function createDescription(ref, isParameters){
+	const finalDescWithUrls = createTextsWithUrl(ref.desc)
+	var id = "ref-desc"
+	if (isParameters) {id="ref-desc-params"}
+	return <div class={id}>{finalDescWithUrls}</div>
+}
+
+
+function createType(ref){
+	return <div class="ref-type">{ref.type}</div>
+}
+
+function createDefault(ref){
+	const def = ref.default
+	if (def) {
+		return <div class="ref-default">default={ref.default}</div>
+	} else{
+		return <></>
+	}
+	
+}
+
+
+
+function createUsage(ref){
+	return <div class="ref-usage">{ref.usage}</div>
+}
+
+function createParameters(ref){
+	return buildReferenceView(ref.params, true)
+}
+
+
+//extracting urls from markdown format
+function createTextsWithUrl(markDown){
 	const urlMarkDownRegex = /\[[^\[\]\(\)]*\]\([^\[\]\(\)]*\)/g
-	const descParts = ref.desc.split(urlMarkDownRegex)
-	const urlMarkDowns = ref.desc.match(urlMarkDownRegex)
+	const descParts = markDown.split(urlMarkDownRegex)
+	const urlMarkDowns = markDown.match(urlMarkDownRegex)
 	const finalDescWithUrls = []
 
 	
@@ -48,22 +91,8 @@ function createDescription(ref){
 		}
 		
 	}
-	return <div class="ref-desc">{finalDescWithUrls}</div>
-}
 
-
-function createType(ref){
-	return <div class="ref-type">{ref.type}</div>
-}
-
-
-
-function createUsage(ref){
-	return <div class="ref-usage">{ref.usage}</div>
-}
-
-function createParameters(ref){
-	return buildReferenceView(ref.params, true)
+	return finalDescWithUrls
 }
 
 export default ApiReference

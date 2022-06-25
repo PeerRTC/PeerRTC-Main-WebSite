@@ -1,0 +1,16 @@
+#main-navigation{
+	margin-top: 15%;
+	width: 30%;
+}
+
+
+.nav-item{
+	font-size: 23px;
+	float: right;
+	margin-right: 10px;
+}
+
+
+.nav-line{
+	margin-left: 25%;
+}
