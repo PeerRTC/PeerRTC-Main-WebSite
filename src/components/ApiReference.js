@@ -3,7 +3,10 @@ import "../styles/api-reference.css"
 function ApiReference(props){
 	return <>
 		<h1>{props.title}</h1>
-		<p>{createTextsWithUrl(props.description)}</p>
+		<p>{createTextsWithMarkDowns(props.description)}</p>
+		<h1>Setup</h1>
+		<h1>Api Reference</h1>
+
 		{buildReferenceView(props.references, false)}
 	</>
 }
@@ -41,7 +44,7 @@ function createTitle(ref, isParameters){
 }
 
 function createDescription(ref, isParameters){
-	const finalDescWithUrls = createTextsWithUrl(ref.desc)
+	const finalDescWithUrls = createTextsWithMarkDowns(ref.desc)
 	var id = "ref-desc"
 	if (isParameters) {id="ref-desc-params"}
 	return <div class={id}>{finalDescWithUrls}</div>
@@ -74,25 +77,35 @@ function createParameters(ref){
 
 
 //extracting urls from markdown format
-function createTextsWithUrl(markDown){
+function createTextsWithMarkDowns(markDown){
 	const finalDescWithUrls = []
+	const finalSetupWithCodes = []
 
 	if (markDown) {
-		const urlMarkDownRegex = /\[[^\[\]\(\)]*\]\([^\[\]\(\)]*\)/g
-		const descParts = markDown.split(urlMarkDownRegex)
-		const urlMarkDowns = markDown.match(urlMarkDownRegex)
+		const urlMarkDownRegex = /\[[^\[\]\(\)]*\]\([^\[\]\(\)]*\)/
+		const quotedCodeRegex = /```(\s|.)*```/
+		const markDownsRegex = new RegExp(urlMarkDownRegex.source + "|" + quotedCodeRegex.source, "g" )
 		
+		const markDowns = markDown.match(markDownsRegex)
+		const parts = markDown.split(markDownsRegex)
 
 		
-		for (var i = 0; i < descParts.length; i++) {
-			finalDescWithUrls.push(descParts[i])
+		for (var i = 0; i < parts.length; i++) {
+			finalDescWithUrls.push(parts[i])
 			
-			if (urlMarkDowns) {
-				const urlMarkDown = urlMarkDowns[i]
-				if (urlMarkDown) {
-					const url = urlMarkDown.match(/\(.*\)/g)[0].replaceAll(/\(|\)/g, "")
-					const urlName = urlMarkDown.match(/\[.*\]/g)[0].replaceAll(/\[|\]/g, "")
-					finalDescWithUrls.push(<a href={url} target="blank">{urlName}</a>)
+			if (markDowns) {
+				const markDown = markDowns[i]
+
+				if (markDown) {
+					if (markDown.match(urlMarkDownRegex)) {
+						const url = markDown.match(/\(.*\)/g)[0].replaceAll(/\(|\)/g, "")
+						const urlName = markDown.match(/\[.*\]/g)[0].replaceAll(/\[|\]/g, "")
+						finalDescWithUrls.push(<a href={url} target="blank">{urlName}</a>)
+					} else if (markDown.match(quotedCodeRegex)) {
+						const code = markDown.replaceAll("```", "")
+						finalDescWithUrls.push(<pre>{code}</pre>)
+					}
+					
 				}
 				
 			}
@@ -103,5 +116,7 @@ function createTextsWithUrl(markDown){
 	
 	return finalDescWithUrls
 }
+
+
 
 export default ApiReference
