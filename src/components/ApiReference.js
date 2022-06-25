@@ -84,7 +84,12 @@ function createTextsWithMarkDowns(markDown){
 	if (markDown) {
 		const urlMarkDownRegex = /\[[^\[\]\(\)]*\]\([^\[\]\(\)]*\)/
 		const quotedCodeRegex = /```(\s|.)*```/
-		const markDownsRegex = new RegExp(urlMarkDownRegex.source + "|" + quotedCodeRegex.source, "g" )
+		const singleCodeRegex = /`.*`/
+		const markDownsRegex = new RegExp(
+			urlMarkDownRegex.source + "|" + 
+			quotedCodeRegex.source + "|" + 
+			singleCodeRegex.source, "g"
+		)
 		
 		const markDowns = markDown.match(markDownsRegex)
 		const parts = markDown.split(markDownsRegex)
@@ -97,15 +102,19 @@ function createTextsWithMarkDowns(markDown){
 				const markDown = markDowns[i]
 
 				if (markDown) {
-					if (markDown.match(urlMarkDownRegex)) {
+					var mdown = ""
+					if (markDown.match(singleCodeRegex)) {
+						const code = markDown.replaceAll("`", "")
+						mdown = <text class="ref-type-in-desc">{code}</text>
+					} else if (markDown.match(urlMarkDownRegex)) {
 						const url = markDown.match(/\(.*\)/g)[0].replaceAll(/\(|\)/g, "")
 						const urlName = markDown.match(/\[.*\]/g)[0].replaceAll(/\[|\]/g, "")
-						finalDescWithUrls.push(<a href={url} target="blank">{urlName}</a>)
+						mdown = <a href={url} target="blank">{urlName}</a>
 					} else if (markDown.match(quotedCodeRegex)) {
 						const code = markDown.replaceAll("```", "")
-						finalDescWithUrls.push(<pre>{code}</pre>)
+						mdown = <pre>{code}</pre>
 					}
-					
+					finalDescWithUrls.push(mdown)
 				}
 				
 			}

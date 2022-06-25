@@ -3,7 +3,7 @@
 		{
 			"title": "id",
 			"type": "attribute",
-			"desc": "Returns a unique id assigned by the server to this client.",
+			"desc": "Returns a unique id assigned by the server to this client. `a`",
 			"usage": "peer.id",
 			"params": [
 				{
