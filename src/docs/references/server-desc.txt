@@ -1,0 +1,2 @@
+Backend server for the [PeerRTC](https://github.com/PeerRTC/PeerRTC) module. This server is used as the signaling server for clients coming from
+the PeerRTC clients. This server can also be used as a temporay storage for client related data and payloads.

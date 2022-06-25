@@ -1,7 +1,11 @@
 import "../styles/api-reference.css"
 
 function ApiReference(props){
-	return buildReferenceView(props.references, false)
+	return <>
+		<h1>{props.title}</h1>
+		<p>{createTextsWithUrl(props.description)}</p>
+		{buildReferenceView(props.references, false)}
+	</>
 }
 
 function buildReferenceView(references, isParameters) {
@@ -71,27 +75,32 @@ function createParameters(ref){
 
 //extracting urls from markdown format
 function createTextsWithUrl(markDown){
-	const urlMarkDownRegex = /\[[^\[\]\(\)]*\]\([^\[\]\(\)]*\)/g
-	const descParts = markDown.split(urlMarkDownRegex)
-	const urlMarkDowns = markDown.match(urlMarkDownRegex)
 	const finalDescWithUrls = []
 
-	
-	for (var i = 0; i < descParts.length; i++) {
-		finalDescWithUrls.push(descParts[i])
+	if (markDown) {
+		const urlMarkDownRegex = /\[[^\[\]\(\)]*\]\([^\[\]\(\)]*\)/g
+		const descParts = markDown.split(urlMarkDownRegex)
+		const urlMarkDowns = markDown.match(urlMarkDownRegex)
 		
-		if (urlMarkDowns) {
-			const urlMarkDown = urlMarkDowns[i]
-			if (urlMarkDown) {
-				const url = urlMarkDown.match(/\(.*\)/g)[0].replaceAll(/\(|\)/g, "")
-				const urlName = urlMarkDown.match(/\[.*\]/g)[0].replaceAll(/\[|\]/g, "")
-				finalDescWithUrls.push(<a href={url}>{urlName}</a>)
+
+		
+		for (var i = 0; i < descParts.length; i++) {
+			finalDescWithUrls.push(descParts[i])
+			
+			if (urlMarkDowns) {
+				const urlMarkDown = urlMarkDowns[i]
+				if (urlMarkDown) {
+					const url = urlMarkDown.match(/\(.*\)/g)[0].replaceAll(/\(|\)/g, "")
+					const urlName = urlMarkDown.match(/\[.*\]/g)[0].replaceAll(/\[|\]/g, "")
+					finalDescWithUrls.push(<a href={url} target="blank">{urlName}</a>)
+				}
+				
 			}
 			
 		}
-		
-	}
 
+	}
+	
 	return finalDescWithUrls
 }
 
