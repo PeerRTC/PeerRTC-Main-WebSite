@@ -10,8 +10,15 @@
 
 .sample-project-desc{
 	margin-left: 30px;
+	margin-bottom: 5px;
 }
 
+
+.sample-source-code{
+	margin-left: 30px;
+	font-size: 15px;
+	color: #e07236;
+}
 
 .sample-usage-desc{
 	color: #3d2952;
@@ -21,4 +28,6 @@
 #sample-project-desc{
 	color: #3d2952;
 }
+
+
 

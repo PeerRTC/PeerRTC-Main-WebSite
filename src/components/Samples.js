@@ -9,18 +9,25 @@ function Samples(){
 	fetchSampleUsage(rawWebSample, setWebUsage)
 	fetchSampleUsage(rawAndroidSample, setAndroidUsage)
 
-	const desc1 = "A simple video calling and file sharing site."
-	const desc2 = "Video call and file sharing site source code."
-	const desc3 = "Simple video calling and file sharing android app source code."
 
 	return <div>
 		<h1>📖 Sample Projects</h1>
 
 		<p id="sample-project-desc">To help the developers in implementing the library, we have created simple projects as an example.</p>
 		
-		{createSampleProjectLinks("Web Site","https://PeerRTC.github.io/PeerRTC/test/Video%20call%20with%20file%20sharing/index.html", desc1)}
-		{createSampleProjectLinks("Web Source Code", "https://github.com/PeerRTC/PeerRTC/tree/master/test/Video%20call%20with%20file%20sharing", desc2)}
-		{createSampleProjectLinks("Android Source Code","https://github.com/PeerRTC/AndroidPeerRTC/tree/master/app", desc3)}
+		{createSampleProjectLinks("Video Call and File Sharing Website",
+			"https://peerrtc.github.io/PeerRTC/test/Video%20call%20with%20file%20sharing/index.html",
+			"A simple video calling and file sharing site.",
+			"https://github.com/PeerRTC/PeerRTC/tree/master/test/Video%20call%20with%20file%20sharing"
+		)}
+
+		<br/>
+		
+		{createSampleProjectLinks("Video Call and File Sharing Android App",
+			"https://github.com/PeerRTC/AndroidPeerRTC/tree/master/app",
+			"A simple video calling and file sharing android app",
+			"https://github.com/PeerRTC/AndroidPeerRTC/tree/master/app"
+		)}
 
 		<br/>
 		<hr/>
@@ -50,10 +57,13 @@ function fetchSampleUsage(raw, setStateFunc){
 }
 
 
-function createSampleProjectLinks(name, link, desc){
+function createSampleProjectLinks(name, link, desc, sourceCodeLink){
 	return <div>
 		 <h2 class="sample-project-link"><a href={link}>{name}</a></h2>
-		 <div class="sample-project-desc">{desc}</div>
+		 <p class="sample-project-desc">
+		 	{desc}
+		 </p>
+		 <a class="sample-source-code" href={sourceCodeLink}>Github</a>
 	</div>
 }
 
