@@ -5,6 +5,7 @@ function MainNavigation(props){
 		<div><hr id="main-title-line"/></div>
 
 		<nav id="nav">
+			{createLinks("PeerRTC", ()=>{window.open("https://github.com/PeerRTC", "_self")})}
 			{createLinks("Getting Started", ()=>props.setDisplayPage(0))}
 			{createLinks("Examples", ()=>props.setDisplayPage(1))}
 			{createLinks("Web PeerRTC", ()=>props.setDisplayPage(2))}
