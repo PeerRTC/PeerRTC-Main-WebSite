@@ -29,8 +29,7 @@ function Home(){
 		<br/>
 		<center>
 			<p id="home-attribution-req">
-				💡 Attribution to <a href={attribUrl}>us</a> are required
-				 when using any modules and libraries from PeerRTC 💡
+				💡 Attribution to <a href={attribUrl}>us</a> are required when using PeerRTC 💡
 			</p>
 
 			<div id="link-display">
