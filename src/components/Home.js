@@ -9,18 +9,20 @@ function Home(){
 	const [mainDescription, setMainDescription] = useState("")
 	fetch(raw).then(r=>r.text()).then(text=>setMainDescription(text))
 	return <div id="main-home-container">
-		<h1>The PeerRTC</h1>
+		<h1>What is it ?</h1>
 		<p class="home-desc">{mainDescription}</p>
 		<br/>
-
-		<center>	
-			<p id="fork-label">Fork github repositories</p>
-		</center>	
-		<center>	
-			{createGithubButtons("PeerRTC", "https://github.com/PeerRTC/PeerRTC")}
-			{createGithubButtons("AndroidPeerRTC", "https://github.com/PeerRTC/AndroidPeerRTC")}
-			{createGithubButtons("PeerRTCServer", "https://github.com/PeerRTC/PeerRTC-Server")}
-		</center>
+		<div class="code-container">
+			<center>	
+				<p id="fork-label">✨ Fork github repositories ✨</p>
+			</center>	
+			<center>	
+				{createGithubButtons("PeerRTC", "https://github.com/PeerRTC/PeerRTC")}
+				{createGithubButtons("AndroidPeerRTC", "https://github.com/PeerRTC/AndroidPeerRTC")}
+				{createGithubButtons("PeerRTCServer", "https://github.com/PeerRTC/PeerRTC-Server")}
+			</center>
+		</div>
+		
 
 
 		<br/><br/><br/>
@@ -32,7 +34,7 @@ function Home(){
 				💡 Attribution to <a href={attribUrl}>us</a> are required when using PeerRTC 💡
 			</p>
 
-			<div id="link-display">
+			<div id="link-display" class="code-container"> 
 				{copiedAttrib}
 			</div>
 

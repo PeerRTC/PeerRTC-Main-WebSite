@@ -1,17 +1,17 @@
 #main-navigation-container{
 	width: 30%;
-	margin-top: 1%;
+	margin-top: 2%;
 	display: flex;
 	flex-direction: column;
 }
 
 #nav{
-	margin-top: 15%;
+	margin-top: 25%;
 }
 
 
 .nav-item{
-	font-size: 16px;
+	font-size: 18px;
 	margin-right: 10px;
 	float: right;
 	color: black;
@@ -23,16 +23,19 @@
 }
 
 
-.nav-line{
+.nav-line, #main-title-line{
 	border: none;
 	margin-left: 25%;
 	background-color: #e0e0e0;
 	height: 1px;
 }
 
-#logo-img{
-	width: 170px;
-	height: 170px;
-	margin-left: auto;
+#main-title-line{
+	background-color: #c4b8d4;
+}
 
+#main-title{
+	margin-left: auto;
+	font-size: 50px;
+	font-weight: bold;
 }

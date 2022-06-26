@@ -29,11 +29,11 @@ function Samples(){
 		<h1>🧐 Sample Usage</h1>
 		<h2 class="sample-usage-title">Web</h2>
 		<p class="sample-usage-desc">Sample javascript code for connecting in PeerRTC server.</p>
-		<div class="sample-usage-codes-container">{webUsage}</div>
+		<div class="code-container">{webUsage}</div>
 
 		<h2 class="sample-usage-title">Android (Kotlin)</h2> 
 		<p class="sample-usage-desc">Sample Kotlin code for connecting in PeerRTC server.</p>
-		<div class="sample-usage-codes-container">{androidUsage}</div>
+		<div class="code-container">{androidUsage}</div>
 
 	</div>
 }

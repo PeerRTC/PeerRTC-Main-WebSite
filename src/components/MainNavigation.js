@@ -1,8 +1,8 @@
-import logo from "../assets/logo.png"
 
 function MainNavigation(props){
 	return <div id="main-navigation-container">
-		<img id="logo-img"src={logo}></img>
+		<text id="main-title">The PeerRTC ⚡</text>
+		<div><hr id="main-title-line"/></div>
 
 		<nav id="nav">
 			{createLinks("Getting Started", ()=>props.setDisplayPage(0))}

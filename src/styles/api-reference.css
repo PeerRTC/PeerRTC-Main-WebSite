@@ -1,70 +1,4 @@
-.ref-title, .ref-title-params{
-	font-size: 20px;
-	font-weight: bold;
-}
 
-
-.ref-title-params{
-	font-size: 18px;
-}
-
-
-.ref-desc, .ref-desc-params{
-	font-size: 20px;
-	margin-left: 5px;
-	margin-top: 17px;
-}
-
-.ref-desc-params{
-	font-size: 18px;
-}
-
-.ref-type, .ref-default, .ref-type-in-desc{
-	padding: 4px;
-	background-color: #3C4B70;
-	margin-left: 10px;
-	font-size: 13px;
-	height: 17px;
-	text-align: center;
-	color: white;
-	border-radius: 10px;
-}
-
-.ref-type-in-desc{
-	margin-left: 0;
-}
-
-
-.ref-usage{
-	margin-top: 7px;
-	margin-left: 10px;
-	padding: 15px;
-	background-color: #f9f9f8;
-	font-size: 15px;
-	border-color: #efeeef;
-	border-width: 1px;
-	border-style: solid;
-}
-
-
-#ref-title-container{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-#ref-params-container{
-	margin-top: 20px;
-	margin-left: 25px;
-}
-
-.code-container{
-	background-color: #f9f9f8;	
-	border-color: #efeeef;
-	border-width: 2px;
-	border-style: solid;
-	padding: 10px;
-}
 
 #main-h1-desc{
 	margin-left: 20px;
@@ -76,8 +10,14 @@
 	line-height: 30px;
 }
 
-#api-ref-container{
-	margin-left: 20px;
+
+.ref-items{
+	margin-bottom: 10px;
+}
+
+#get-source-code-label{
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 

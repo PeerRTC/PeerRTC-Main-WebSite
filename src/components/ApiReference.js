@@ -5,80 +5,22 @@ function ApiReference(props){
 		<h1>{props.title}</h1>
 		<p id="main-h1-desc">{createTextsWithMarkDowns(props.description)}</p>
 
-		<center>
-			<button onClick={()=>window.open(props.repoUrl, "_self")}>Github Repo</button>
-		</center>
+		<div class="code-container">
+			<center>
+				<p id="get-source-code-label">🚀 Get the source code in Github 🚀</p>
+				<button class="fork-button" onClick={()=>window.open(props.repoUrl, "_self")}>Fork Me</button>
+			</center>
+		</div>
 		<h1>⚙ Setup</h1>
 		<p id="setup-h1-desc">{createTextsWithMarkDowns(props.setup)}</p>
 		<br/>
 		<h1>📚 Api Reference</h1>
-		<br/>
-		<div id="api-ref-container" >{buildReferenceView(props.references, false)} </div>
+		<ul>
+			{props.references.map(data=>
+				<li class="ref-items"><a href={data.link}>{data.name}</a></li>
+			)}
+		</ul>
 	</>
-}
-
-function buildReferenceView(references, isParameters) {
-	return (
-		<>
-			{
-				references.map(ref=>
-					<div>
-						<div id="ref-title-container"> 
-							{createTitle(ref, isParameters)} 
-							{createType(ref)}
-							{createDefault(ref)}
-						</div>
-					
-						{createUsage(ref)}
-						{createDescription(ref, isParameters)}
-						<div id="ref-params-container">
-							{!isParameters && createParameters(ref)}
-						</div>
-					</div>
-				) 
-			}
-
-			{isParameters && <br/>}
-		</>
-	)
-}
-
-function createTitle(ref, isParameters){
-	var id = "ref-title"
-	if (isParameters) {id = "ref-title-params"}
-	return <div class={id}>{ref.title}</div>
-}
-
-function createDescription(ref, isParameters){
-	const finalDescWithUrls = createTextsWithMarkDowns(ref.desc)
-	var id = "ref-desc"
-	if (isParameters) {id="ref-desc-params"}
-	return <div class={id}>{finalDescWithUrls}</div>
-}
-
-
-function createType(ref){
-	return <div class="ref-type">{ref.type}</div>
-}
-
-function createDefault(ref){
-	const def = ref.default
-	if (def) {
-		return <div class="ref-default">default={ref.default}</div>
-	} else{
-		return <></>
-	}
-	
-}
-
-
-
-function createUsage(ref){
-	return <div class="ref-usage">{ref.usage}</div>
-}
-
-function createParameters(ref){
-	return buildReferenceView(ref.params, true)
 }
 
 

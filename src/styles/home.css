@@ -1,17 +1,10 @@
-.fork-button{
-	background-color: black;
-	margin-left: 15px;
-	margin-bottom: 15px;
-	font-size: 15px;
-}
-
 #fork-label{
 	font-weight: bold;
 	margin-bottom: 20px;
 }
 
 .fork-button:hover{
-	background-color: #6E6E6E;
+	background-color: #e07236;
 }
 
 .home-desc{
@@ -24,13 +17,9 @@
 }
 
 #link-display{
-	background-color: #f9f9f8;
 	font-size: 15px;
 	font-weight: bold;
-	border-color: #efeeef;
-	border-width: 2px;
-	border-style: solid;
-	padding: 10px;
+	padding: 15px;
 }
 
 #copy-attrib-bttn{
