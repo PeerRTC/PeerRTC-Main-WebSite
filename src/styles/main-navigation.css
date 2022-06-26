@@ -24,9 +24,9 @@
 
 
 .nav-line{
+	border: none;
 	margin-left: 25%;
 	background-color: #e0e0e0;
-	border: none;
 	height: 1px;
 }
 
