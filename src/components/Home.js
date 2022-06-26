@@ -14,7 +14,7 @@ function Home(){
 		<br/>
 
 		<center>	
-			<p id="fork-label">Fork the source codes</p>
+			<p id="fork-label">Fork github repositories</p>
 		</center>	
 		<center>	
 			{createGithubButtons("PeerRTC", "https://github.com/PeerRTC/PeerRTC")}
@@ -55,7 +55,7 @@ function copyAttrib(){
 	document.getElementById("attrib-copied-indicator").style.visibility = "visible"
 }
 function createGithubButtons(name, link){
-	return <button class="fork-button" onClick={()=>window.open(link,'_blank')}>{name}</button>
+	return <button class="fork-button" onClick={()=>window.open(link,'_self')}>{name}</button>
 }
 
 export default Home
