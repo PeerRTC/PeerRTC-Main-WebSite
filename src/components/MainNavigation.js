@@ -6,7 +6,7 @@ function MainNavigation(props){
 
 		<nav id="nav">
 			{createLinks("Getting Started", ()=>props.setDisplayPage(0))}
-			{createLinks("Sample Projects", ()=>props.setDisplayPage(1))}
+			{createLinks("Examples", ()=>props.setDisplayPage(1))}
 			{createLinks("Web PeerRTC", ()=>props.setDisplayPage(2))}
 			{createLinks("Android PeerRTC",  ()=>props.setDisplayPage(3))}
 			{createLinks("Cloud Server",  ()=>props.setDisplayPage(4))}

@@ -15,7 +15,7 @@ function Samples(){
 
 		<p id="sample-project-desc">To help the developers in implementing the library, we have created simple projects as an example.</p>
 		
-		{createSampleProjectLinks("Video Call and File Sharing Website",
+		{createSampleProjectLinks("Video Call and File Sharing Website.",
 			"https://peerrtc.github.io/PeerRTC/test/Video%20call%20with%20file%20sharing/index.html",
 			"A simple video calling and file sharing site.",
 			"https://github.com/PeerRTC/PeerRTC/tree/master/test/Video%20call%20with%20file%20sharing"
@@ -23,7 +23,7 @@ function Samples(){
 
 		<br/>
 		
-		{createSampleProjectLinks("Video Call and File Sharing Android App",
+		{createSampleProjectLinks("Video Call and File Sharing Android App.",
 			"https://github.com/PeerRTC/AndroidPeerRTC/tree/master/app",
 			"A simple video calling and file sharing android app",
 			"https://github.com/PeerRTC/AndroidPeerRTC/tree/master/app"
