@@ -88,6 +88,6 @@ a{
 }
 
 pre{
-	white-space: pre-wrap;
+	white-space: pre-line;
 	line-height: 25px;
 }
