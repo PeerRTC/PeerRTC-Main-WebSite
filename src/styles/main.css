@@ -88,6 +88,7 @@ a{
 }
 
 pre{
-	white-space: pre-line;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 	line-height: 25px;
 }
