@@ -32,7 +32,7 @@ function Samples(){
 		<br/>
 		
 		{createSampleProjectLinks("Video Call and File Sharing Android App",
-			"https://github.com/PeerRTC/AndroidPeerRTC/tree/master/app",
+			"https://github.com/PeerRTC/AndroidPeerRTC/blob/master/app/release/app-release.apk",
 			"A simple video calling and file sharing android app.",
 			"https://github.com/PeerRTC/AndroidPeerRTC/tree/master/app"
 		)}
